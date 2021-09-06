@@ -1,6 +1,5 @@
 package org.webmedical.payload.request;
 
-import java.util.Set;
 
 import javax.validation.constraints.*;
  

@@ -16,11 +16,13 @@ import javax.persistence.UniqueConstraint;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 
 @Entity
 @Data
+@NoArgsConstructor
 
 @Table(	name = "users", 
 		uniqueConstraints = { 
@@ -49,9 +51,7 @@ public class User {
 	@NonNull
 	@JsonIgnore
 	private Set<Role> roles = new HashSet<>();
-	
-	public User() {
-	}
+
 
 	public User(String username, String email, String password) {
 		this.username = username;
