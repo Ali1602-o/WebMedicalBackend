@@ -36,19 +36,19 @@ public class DoctorController {
 	
 	
 	@GetMapping("/{id}")
-	public Optional<Doctor> getDoctorbyId(@PathVariable Long id){
+	public Optional<Doctor> getDoctorById(@PathVariable Long id){
 		return docRepo.findById(id);
 	}
 
 	
-	@GetMapping("/{specialite}")
-	public List<Doctor> getAllPatients(@PathVariable String specialite){
+	@GetMapping("Specialite/{specialite}")
+	public List<Doctor> getDoctorsBySpecialite(@PathVariable String specialite){
 		return docRepo.findBySpecialite(specialite);
 	}
 	
 	
-	@GetMapping("/{specialite}/{ville}")
-	public List<Doctor> getAllPatients(@PathVariable String specialite,@PathVariable String ville){
+	@GetMapping("Specialite&Ville/{specialite}/{ville}")
+	public List<Doctor> getDoctorsBySpecialiteAndVille(@PathVariable String specialite,@PathVariable String ville){
 		return docRepo.findBySpecialiteAndVille(specialite,ville);
 	}
 }

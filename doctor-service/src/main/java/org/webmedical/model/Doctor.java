@@ -22,6 +22,7 @@ import lombok.RequiredArgsConstructor;
 			@UniqueConstraint(columnNames = "telephone") 
 		})
 public class Doctor {
+	
 	@Id
 	@NonNull
 	private Long id;
