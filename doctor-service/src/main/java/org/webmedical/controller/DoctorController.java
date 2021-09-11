@@ -16,7 +16,7 @@ import org.webmedical.model.Doctor;
 import org.webmedical.repository.DoctorRepository;
 
 @RestController
-@CrossOrigin(origins ="http://localhost:3000", maxAge = 3600)
+@CrossOrigin(origins ="http://localhost:3000")
 @RequestMapping("/doctor")
 public class DoctorController {
 	@Autowired
@@ -24,9 +24,8 @@ public class DoctorController {
 	
 	
 	@PostMapping("/add")
-	public ResponseEntity<?> addDoctor(@RequestBody Doctor d) {
+	public void addDoctor(@RequestBody Doctor d) {
 		docRepo.save(d);
-		return ResponseEntity.ok("Votre Profil a mis à jour !");
 	}
 	
 	@GetMapping("/all")
@@ -51,4 +50,5 @@ public class DoctorController {
 	public List<Doctor> getDoctorsBySpecialiteAndVille(@PathVariable String specialite,@PathVariable String ville){
 		return docRepo.findBySpecialiteAndVille(specialite,ville);
 	}
+	
 }
